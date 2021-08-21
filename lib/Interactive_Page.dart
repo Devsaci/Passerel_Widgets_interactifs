@@ -43,6 +43,7 @@ class InteractifPageState extends State<InteractifPage> {
         onPressed: updateColors,
         child: Icon(Icons.build),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
