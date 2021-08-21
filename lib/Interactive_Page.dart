@@ -10,7 +10,19 @@ class InteractifPage extends StatefulWidget {
 
 class InteractifPageState extends State<InteractifPage> {
 
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //Tout ce que l'on va faire pendant l'initialistion du Widget
+  }
 
+@override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    //Tout ce que l'on va faire quand le widget sera  dispose.
+  }
 
   @override
   Widget build(BuildContext context) {
