@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InteractifPage extends StatefulWidget {
@@ -9,15 +12,17 @@ class InteractifPage extends StatefulWidget {
 }
 
 class InteractifPageState extends State<InteractifPage> {
+  Color backgroundColor = Colors.white;
+  Color textColor = Colors.black;
 
-@override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
     //Tout ce que l'on va faire pendant l'initialistion du Widget
   }
 
-@override
+  @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
@@ -27,16 +32,21 @@ class InteractifPageState extends State<InteractifPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: Text('Les Interactif'),
       ),
       body: Center(
-        child: Text("Apprendre Les Interactives"),
+        child: Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-              print("Tapped");
-            },
+        onPressed: () {
+          setState(() {
+            backgroundColor = (backgroundColor == Colors.white) ? Colors.black: Colors.white;
+            textColor =(textColor == Colors.black) ? Colors.white: Colors.black;
+          });
+          print("Tapped : $backgroundColor");
+        },
         child: Icon(Icons.build),
       ),
     );
