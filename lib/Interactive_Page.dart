@@ -40,15 +40,20 @@ class InteractifPageState extends State<InteractifPage> {
         child: Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            backgroundColor = (backgroundColor == Colors.white) ? Colors.black: Colors.white;
-            textColor =(textColor == Colors.black) ? Colors.white: Colors.black;
-          });
-          print("Tapped : $backgroundColor");
-        },
+        onPressed: updateColors,
         child: Icon(Icons.build),
       ),
     );
   }
+
+  updateColors() {
+    setState(() {
+      print("Tapped : $backgroundColor");
+      backgroundColor = (backgroundColor == Colors.white) ? Colors.black: Colors.white;
+      textColor =(textColor == Colors.black) ? Colors.white: Colors.black;
+
+    });
+
+  }
+
 }
