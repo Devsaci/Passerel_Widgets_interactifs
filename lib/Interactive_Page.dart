@@ -35,15 +35,25 @@ class InteractifPageState extends State<InteractifPage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        title: Text(updateAppBarText()),),
-      body: Center(
-        child: Column(
-          children: [
-            TextButton(onPressed: updateAppBar, child: Text("Je suis un text Button" ,style: TextStyle(color:textColor),))
-          ],
-        )
-        //Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
+        title: Text(updateAppBarText()),
       ),
+      body: Center(
+          child: Column(
+        children: [
+          TextButton(
+              onPressed: updateAppBar,
+              child: Row(
+                children: [
+                  textButtonText(),
+                  Icon(Icons.work_off_outlined),
+
+                ],
+              )
+          )
+        ],
+      )
+          //Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
+          ),
       floatingActionButton: FloatingActionButton(
         onPressed: updateColors,
         child: Icon(Icons.build),
@@ -55,18 +65,23 @@ class InteractifPageState extends State<InteractifPage> {
   updateColors() {
     setState(() {
       print("Tapped : $backgroundColor");
-      backgroundColor = (backgroundColor == Colors.white) ? Colors.black: Colors.white;
-      textColor =(textColor == Colors.black) ? Colors.white: Colors.black;
-
+      backgroundColor =
+          (backgroundColor == Colors.white) ? Colors.black : Colors.white;
+      textColor = (textColor == Colors.black) ? Colors.white : Colors.black;
     });
   }
 
-  updateAppBar(){
+  updateAppBar() {
     setState(() => textButtonPressed = !textButtonPressed);
   }
 
-String updateAppBarText(){
-return(textButtonPressed)? "Je m'y connais un peu" :"Les Interactifs";
-}
+  String updateAppBarText() {
+    return (textButtonPressed) ? "Je m'y connais un peu" : "Les Interactifs";
+  }
+  Text textButtonText () {
+    return const Text(
+      "Je suis un text Button", style: TextStyle(color: Colors.amber,
+      backgroundColor: Colors.black87,),);
 
+  }
 }
