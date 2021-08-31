@@ -37,7 +37,12 @@ class InteractifPageState extends State<InteractifPage> {
         title: Text('Les Interactif'),
       ),
       body: Center(
-        child: Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
+        child: Column(
+          children: [
+            TextButton(onPressed: null, child: Text("Je suis un text Button" ,style: TextStyle(color:textColor),))
+          ],
+        )
+        //Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: updateColors,
