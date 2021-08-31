@@ -39,7 +39,7 @@ class InteractifPageState extends State<InteractifPage> {
       body: Center(
         child: Column(
           children: [
-            TextButton(onPressed: null, child: Text("Je suis un text Button" ,style: TextStyle(color:textColor),))
+            TextButton(onPressed: updateAppBar, child: Text("Je suis un text Button" ,style: TextStyle(color:textColor),))
           ],
         )
         //Text("Apprendre Les Interactives", style: TextStyle(color: textColor),),
@@ -59,8 +59,12 @@ class InteractifPageState extends State<InteractifPage> {
       textColor =(textColor == Colors.black) ? Colors.white: Colors.black;
 
     });
-
   }
+
+  updateAppBar(){
+    setState(() => textButtonPressed = !textButtonPressed);
+  }
+
 String updateAppBarText(){
 return(textButtonPressed)? "Je m'y connais un peu" :"Les Interactifs";
 }
