@@ -14,6 +14,7 @@ class InteractifPage extends StatefulWidget {
 class InteractifPageState extends State<InteractifPage> {
   Color backgroundColor = Colors.white;
   Color textColor = Colors.black;
+  bool textButtonPressed = true;
 
   @override
   void initState() {
@@ -34,8 +35,7 @@ class InteractifPageState extends State<InteractifPage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        title: Text('Les Interactif'),
-      ),
+        title: Text(updateAppBarText()),),
       body: Center(
         child: Column(
           children: [
@@ -61,5 +61,8 @@ class InteractifPageState extends State<InteractifPage> {
     });
 
   }
+String updateAppBarText(){
+return(textButtonPressed)? "Je m'y connais un peu" :"Les Interactifs";
+}
 
 }
